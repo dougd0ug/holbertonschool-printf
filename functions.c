@@ -46,7 +46,7 @@ void print_string(va_list print_list)
 
 void print_pourcent(va_list print_list)
 {
-	char c = va_arg(print_list, char);
+	char c = va_arg(print_list, int);
 	if (c == '%')
 	{
 		_putchar(c);
