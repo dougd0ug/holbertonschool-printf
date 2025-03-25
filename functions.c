@@ -3,25 +3,25 @@
 #include <stdarg.h>
 
 /**
- * afficher_char - print a char
- * @afficher_list: searching list
+ * print_char - print a char
+ * @print_list: searching list
  */
 
-void afficher_char(va_list afficher_list)
+void print_char(va_list print_list)
 {
-	char c = va_arg(afficher_list, char);
+	char c = va_arg(print_list, char);
 	_putchar(c);
 }
 
 /**
- * afficher_string - print a string
- * @afficher_list: searching list
+ * print_string - print a string
+ * @print_list: searching list
  */
 
-void afficher_string(va_list afficher_list)
+void print_string(va_list print_list)
 {
 	int i;
-	char *s = va_arg(afficher_list, char *);
+	char *s = va_arg(print_list, char *);
 
 	if (s == NULL)
 	{
@@ -40,10 +40,11 @@ void afficher_string(va_list afficher_list)
 }
 
 /**
+ * print_pourcent - print pourcent
  * 
  */
 
-void afficher_pourcent(va_list afficher_list)
+void print_pourcent(va_list print_list)
 {
 	_putchar('%');
 }

@@ -9,8 +9,9 @@ typedef struct main
 } main_t;
 
 int _putchar(char c);
-void afficher_char(va_list afficher_list);
-void afficher_string(va_list afficher_list);
+void print_char(va_list print_list);
+void print_string(va_list print_list);
+void print_pourcent(va_list print_list);
 
 int _printf(const char *format, ...);
 

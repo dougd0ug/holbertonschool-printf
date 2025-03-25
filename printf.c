@@ -10,14 +10,16 @@
 
 int _printf(const char *format, ...)
 {
-	va_list afficher_list;
+	va_list print_list;
+	int length = 0;
 	int i = 0;
 	int j = 0;
-	char *separator = "";
 
-	main_t list[] = {
-			{'c', afficher_char},
-			{'s', afficher_string}
+	main_t ops[] = {
+			{'c', print_char},
+			{'s', print_string},
+			{'%', print_pourcent},
+			{'\0', NULL}
 	}
 	
 }
