@@ -4,7 +4,7 @@
 
 typedef struct main
 {
-	char *form;
+	char form;
 	void (*f)(va_list);
 } main_t;
 

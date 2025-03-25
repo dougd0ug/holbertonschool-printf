@@ -20,6 +20,28 @@ int _printf(const char *format, ...)
 			{'s', print_string},
 			{'%', print_pourcent},
 			{'\0', NULL}
+	};
+
+	va_start(print_list, format);
+
+	while (format && format[i])
+	{
+			if (format[i] == '%')
+			{
+				j = 0;
+				while (ops[j].form)
+				{
+					if (format[i] == ops[j].form)
+					{
+						ops[j].f(print_list);
+					}
+				}
+				j++;
+			}
+			_putchar(format[i]);
+		i++;
+		length++;
 	}
-	
+	va_end(print_list);
+	return (length);
 }

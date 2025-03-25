@@ -9,7 +9,7 @@
 
 void print_char(va_list print_list)
 {
-	char c = va_arg(print_list, char);
+	char c = va_arg(print_list, int);
 	_putchar(c);
 }
 
@@ -41,7 +41,7 @@ void print_string(va_list print_list)
 
 /**
  * print_pourcent - print pourcent
- * 
+ * @print_list: searching list
  */
 
 void print_pourcent(va_list print_list)
