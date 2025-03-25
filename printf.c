@@ -34,11 +34,12 @@ int _printf(const char *format, ...)
 					if (format[i] == ops[j].form)
 					{
 						ops[j].f(print_list);
+						break;
 					}
-					_putchar(format[i]);
 				}
 				j++;
 			}
+			_putchar(format[i]);
 		i++;
 		length++;
 	}
