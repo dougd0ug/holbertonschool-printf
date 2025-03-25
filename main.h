@@ -11,7 +11,7 @@ typedef struct main
 int _putchar(char c);
 void print_char(va_list print_list);
 void print_string(va_list print_list);
-void print_pourcent(va_list print_list);
+void print_pourcent(char c);
 
 int _printf(const char *format, ...);
 
