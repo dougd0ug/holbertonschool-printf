@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 					if (format[i] == ops[j].form)
 					{
 						ops[j].f(print_list);
+						break;
 					}
 				}
 				j++;
