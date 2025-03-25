@@ -36,9 +36,9 @@ int _printf(const char *format, ...)
 						ops[j].f(print_list);
 					}
 				}
+				_putchar(format[i]);
 				j++;
 			}
-			_putchar(format[i]);
 		i++;
 		length++;
 	}
