@@ -44,7 +44,8 @@ void print_string(va_list print_list)
  * @print_list: searching list
  */
 
-void print_pourcent(va_list print_list)
+void print_pourcent(char c)
 {
-	_putchar('%');
+	c = '%'
+	_putchar(c);
 }
