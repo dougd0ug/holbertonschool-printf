@@ -22,7 +22,7 @@ int print_int(va_list args)
     {
         _putchar('-');
         count++;
-	num = -num
+	num = -num;
     }
 
     while (num > 0)
