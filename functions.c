@@ -4,21 +4,25 @@
 
 /**
  * print_char - print a char
- * @print_list: searching list
+ * @print_list: searching list*
+ * Return: always 1
  */
 
-void print_char(va_list print_list)
+int print_char(va_list print_list)
 {
 	char c = va_arg(print_list, int);
+
 	_putchar(c);
+	return (1);
 }
 
 /**
  * print_string - print a string
  * @print_list: searching list
+ * Return: length of the string
  */
 
-void print_string(va_list print_list)
+int print_string(va_list print_list)
 {
 	int i;
 	char *s = va_arg(print_list, char *);
@@ -32,23 +36,27 @@ void print_string(va_list print_list)
 		_putchar('l');
 		_putchar(')');
 	}
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		_putchar(s[i]);
-	}	
+	}
+	return (i);
 }
 
 /**
  * print_pourcent - print pourcent
  * @print_list: searching list
+ * Return: always 1
  */
 
-void print_pourcent(va_list print_list)
+int print_pourcent(va_list print_list)
 {
 	char c = va_arg(print_list, int);
+
 	if (c == '%')
 	{
 		_putchar(c);
 	}
+	return (1);
 }
