@@ -9,9 +9,10 @@ typedef struct main
 } main_t;
 
 int _putchar(char c);
-int print_char(va_list print_list);
-int print_string(va_list print_list);
-int print_pourcent(va_list print_list);
+int get_specifier(char s, va_list args);
+int print_char(va_list args);
+int print_string(va_list args);
+int print_pourcent(va_list args);
 
 int _printf(const char *format, ...);
 

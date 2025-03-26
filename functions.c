@@ -8,9 +8,9 @@
  * Return: always 1
  */
 
-int print_char(va_list print_list)
+int print_char(va_list args)
 {
-	char c = va_arg(print_list, int);
+	char c = va_arg(args, int);
 
 	_putchar(c);
 	return (1);
@@ -22,10 +22,10 @@ int print_char(va_list print_list)
  * Return: length of the string
  */
 
-int print_string(va_list print_list)
+int print_string(va_list args)
 {
 	int i;
-	char *s = va_arg(print_list, char *);
+	char *s = va_arg(args, char *);
 
 	if (s == NULL)
 	{
@@ -50,9 +50,9 @@ int print_string(va_list print_list)
  * Return: always 1
  */
 
-int print_pourcent(va_list print_list)
+int print_pourcent(va_list args)
 {
-	char c = va_arg(print_list, int);
+	char c = va_arg(args, int);
 
 	if (c == '%')
 	{

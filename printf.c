@@ -13,44 +13,25 @@
 
 int _printf(const char *format, ...)
 {
-va_list print_list;
-int length = 0, i = 0, j = 0;
+	va_list print_list;
+	int length = 0, i = 0;
+	va_start(print_list, format);
 
-main_t specifiers[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_pourcent},
-		{'\0', NULL}
-	};
-
-va_start(print_list, format);
-
-while (format && format[i])
-{
-	if (format[i] == '%')
+	while (format && format[i])
 	{
-	i++;
-	j = 0;
-		while (specifiers[j].form)
+		if (format[i] == '%')
 		{
-			if (format[i] == specifiers[j].form)
-			{
-				length += specifiers[j].f(print_list);
-				break;
-			}
-			j++;
-			if (specifiers[j].form == '\0')
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				length += 2;
-			}
+			i++;
+			length += get_specifier(format[i], print_list);
 		}
+		else
+		{
+			_putchar(format[i]);
+			length++;
+		}
+		i++;
 	}
-	_putchar(format[i]);
-	i++;
-	length++;
-	}
+
 va_end(print_list);
 return (length);
 }
