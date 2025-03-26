@@ -29,9 +29,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			length += get_specifier(format[i], print_list);
+			int search = get_specifier(format[i], print_list);
 
-			if (specifier[j].form == '\0')
+			if (search == 0)
 			{
 				_putchar('%');
 				_putchar(format[i]);
@@ -39,10 +39,12 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar(format[i]);
-				length++;
+				length += search;
 			}
+			i++;
 		}
+		_putchar(format[i]);
+		length++;
 		i++;
 	}
 va_end(print_list);
