@@ -21,27 +21,27 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			search = get_specifier(format[i + 1], print_list);
-
-			if (search == 0)
+			i++;
+			if (format[i])
 			{
-				_putchar('%');
-				if (format[i + 1])
+				search = get_specifier(format[i + 1], print_list);
+
+				if (search == 0)
 				{
-					_putchar(format[i +1]);
-					length++;
+					_putchar('%');
+					_putchar(format[i]);
+					length += 2;
 				}
-				length++;
+				else
+				{
+				length += search;
+				}
 			}
 			else
 			{
-				length += search;
-			}
-		}
-		else
-		{
-			_putchar(format[i]);
+			_putchar('%');
 			length++;
+			}
 		}
 		i++;
 	}
