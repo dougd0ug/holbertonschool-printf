@@ -25,7 +25,8 @@ int get_specifier(char s, va_list args)
 		if (s == specifier[j].form)
 		{
 			return (specifier[j].f(args));
-		}		j++;	
+		}
+		j++;	
 	}	
 	return (0);
 }
