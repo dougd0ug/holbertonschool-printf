@@ -24,8 +24,13 @@ int get_specifier(char s, va_list args)
 		{
 			return (specifier[j].f(args));
 		}
-		j++;	
-	}	
-	
+		j++;
+	}
+
+	if (specifier[j].form == 0)
+	{
+		return (0);
+	}
+
 	return (j);
 }
