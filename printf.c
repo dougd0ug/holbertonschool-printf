@@ -35,6 +35,7 @@ int _printf(const char *format, ...)
 			{
 				length += search;
 			}
+			i++;
 		}
 		else
 		{
