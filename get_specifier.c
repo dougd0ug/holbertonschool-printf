@@ -27,7 +27,5 @@ int get_specifier(char s, va_list args)
 			return (specifier[j].f(args));
 		}		j++;	
 	}	
-	_putchar('%');
-	_putchar(s);
-	return (2);	
+	return (j);
 }
