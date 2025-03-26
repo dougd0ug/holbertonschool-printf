@@ -41,7 +41,8 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			length++;
 		}
-		i++;
+
+	i++;
 	}
 va_end(print_list);
 return (length);
