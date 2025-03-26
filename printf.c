@@ -14,22 +14,16 @@
 int _printf(const char *format, ...)
 {
 	va_list print_list;
-	int length = 0, i = 0;
+	int length = 0, i = 0, search = 0;
 	va_start(print_list, format);
 
 	
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			length++;
-			i += 2;
-		}
 		if (format[i] == '%')
 		{
 			i++;
-			int search = get_specifier(format[i], print_list);
+			search = get_specifier(format[i], print_list);
 
 			if (search == 0)
 			{
@@ -41,7 +35,6 @@ int _printf(const char *format, ...)
 			{
 				length += search;
 			}
-			i++;
 		}
 		_putchar(format[i]);
 		length++;
