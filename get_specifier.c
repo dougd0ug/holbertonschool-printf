@@ -20,7 +20,7 @@ int get_specifier(char s, va_list args)
 		{'\0', NULL}
 	};
 
-	while (specifier[j].form)
+	while (specifier[j].form != '\0')
 	{
 		if (s == specifier[j].form)
 		{
@@ -28,5 +28,11 @@ int get_specifier(char s, va_list args)
 		}
 		j++;	
 	}	
-	return (0);
+	_putchar('%');
+	if (s != '%')
+	{
+		_putchar(s);
+		return (2);
+	}
+	return (1);
 }
