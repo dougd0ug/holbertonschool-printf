@@ -32,12 +32,18 @@ int _printf(const char *format, ...)
 			if (search == 0)
 			{
 				_putchar('%');
-				_putchar(format[i]);
-				length += 2;
+				if (format[i + 1])
+				{
+					_putchar(format[i + 1]);
+					length++;
+					i++;
+				}
+				length++;
 			}
 			else
 			{
 				length += search;
+				i++;
 			}
 		}
 		else
