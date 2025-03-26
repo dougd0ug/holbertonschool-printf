@@ -26,7 +26,6 @@ int get_specifier(char s, va_list args)
 		}
 		j++;	
 	}	
-	_putchar('%');
-	_putchar(s);
-	return (2);	
+	
+	return (0);
 }

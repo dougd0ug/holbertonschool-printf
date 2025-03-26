@@ -17,21 +17,34 @@ int _printf(const char *format, ...)
 	int length = 0, i = 0;
 	va_start(print_list, format);
 
+	
 	while (format && format[i])
 	{
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			_putchar('%');
+			length++;
+			i += 2;
+		}
 		if (format[i] == '%')
 		{
 			i++;
 			length += get_specifier(format[i], print_list);
-		}
-		else
-		{
-			_putchar(format[i]);
-			length++;
+
+			if (specifier[j].form == '\0')
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				length += 2;
+			}
+			else
+			{
+				_putchar(format[i]);
+				length++;
+			}
 		}
 		i++;
 	}
-
 va_end(print_list);
 return (length);
 }
