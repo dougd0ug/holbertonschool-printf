@@ -15,6 +15,12 @@ int _printf(const char *format, ...)
 {
 	va_list print_list;
 	int i, length = 0, search = 0;
+
+	if (format == NULL)
+	{
+		return (-1);
+	}
+	
 	va_start(print_list, format);
 
 	for (i = 0; format[i] != '\0'; i++)
@@ -30,9 +36,12 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				length += 2;
 			}
+			else
+			{
+				length += search;
+			}
 		}
 		_putchar(format[i]);
-		length += search;
 	}
 	va_end(print_list);
 	return (length);

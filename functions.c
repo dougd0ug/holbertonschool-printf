@@ -51,13 +51,8 @@ int print_string(va_list args)
  * Return: always 1
  */
 
-int print_pourcent(va_list args)
+int print_pourcent(__attribute__((unused)) va_list args)
 {
-	char c = va_arg(args, int);
-
-	if (c == '%')
-	{
-		_putchar(c);
-	}
+	_putchar('%');
 	return (1);
 }
