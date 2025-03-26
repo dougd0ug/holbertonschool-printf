@@ -14,36 +14,28 @@
 int _printf(const char *format, ...)
 {
 	va_list print_list;
-	int i = 0, length = 0, search = 0;
+	int i, length = 0, search = 0;
 	va_start(print_list, format);
 
-	while (format && format[i])
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
+			search = get_specifier(format[i + 1], print_list);
 			i++;
-			if (format[i])
-			{
-				search = get_specifier(format[i], print_list);
 
-				if (search == 0)
-				{
-					_putchar('%');
-					_putchar(format[i]);
-					length += 2;
-				}
-				else
-				{
-				length += search;
-				}
+			if (search == 0)
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				length += 2;
 			}
 			else
 			{
-			_putchar('%');
-			length++;
+				_putchar(format[i]);
+				length += search;
 			}
 		}
-		i++;
 	}
 	va_end(print_list);
 	return (length);
