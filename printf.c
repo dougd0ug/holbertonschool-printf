@@ -36,8 +36,11 @@ int _printf(const char *format, ...)
 				length += search;
 			}
 		}
-		_putchar(format[i]);
-		length++;
+		else
+		{
+			_putchar(format[i]);
+			length++;
+		}
 		i++;
 	}
 va_end(print_list);
