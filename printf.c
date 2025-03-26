@@ -29,21 +29,21 @@ int _printf(const char *format, ...)
 		{
 			search = get_specifier(format[i + 1], print_list);
 
-			if (search == 0)
+			if (search > 0)
+			{
+				length += search;
+				i++;
+			}
+			else
 			{
 				_putchar('%');
-				if (format[i + 1])
+				if (format[i + 1] != '\0')
 				{
 					_putchar(format[i + 1]);
 					length++;
 					i++;
 				}
 				length++;
-			}
-			else
-			{
-				length += search;
-				i++;
 			}
 		}
 		else
