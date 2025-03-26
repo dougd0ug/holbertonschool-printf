@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			search = get_specifier(format[i + 1], print_list);
-			i++;
 
 			if (search == 0)
 			{
@@ -41,7 +40,11 @@ int _printf(const char *format, ...)
 				length += search;
 			}
 		}
-		_putchar(format[i]);
+		else
+		{
+			_putchar(format[i]);
+			length++;
+		}
 	}
 	va_end(print_list);
 	return (length);
