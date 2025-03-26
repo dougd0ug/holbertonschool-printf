@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			i++;
-			length += (format[i], print_list);
+			length += get_specifier(format[i], print_list);
 		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
 		{
