@@ -3,8 +3,10 @@
 #include <stdarg.h>
 
 /**
- * 
- * 
+ * get_specifier - list format and associate function
+ * @s: format to check
+ * @args: list of arguments
+ * Return: 2 if don't recognize, 1 if recognize
  */
 
 int get_specifier(char s, va_list args)
@@ -26,8 +28,8 @@ int get_specifier(char s, va_list args)
 		{
 			return (specifier[j].f(args));
 		}
-		j++;	
-	}	
+		j++;
+	}
 	_putchar('%');
 	if (s != '%')
 	{
