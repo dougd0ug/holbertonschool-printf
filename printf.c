@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i])
 			{
-				search = get_specifier(format[i + 1], print_list);
+				search = get_specifier(format[i], print_list);
 
 				if (search == 0)
 				{
