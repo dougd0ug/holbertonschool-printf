@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_int - Function that prints an integer
@@ -19,6 +20,18 @@ int print_int(va_list args)
 		_putchar('0');
 		return (1);
 	}
+
+	if (num == INT_MIN)
+	{
+		char *min_str = "-2147483648";
+
+		for (i = 0; min_str[i] != '\0'; i++)
+		{
+			_putchar(min_str[i]);
+		}
+
+		return i;
+        }
 
 	if (num < 0)
 	{
