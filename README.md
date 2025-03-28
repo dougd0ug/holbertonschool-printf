@@ -12,8 +12,6 @@ Our version supports:
 
 Basic specifiers: %c (character), %s (string), %d and %i (integers)
 
-Advanced specifiers: %b (binary), %o (octal), %x and %X (hexadecimal), %p (pointers), and %% (escape character)
-
 The key challenge was to replicate the behavior of the standard printf function without directly using it, ensuring efficiency and precision while managing variadic arguments and format specifiers.
 
 
