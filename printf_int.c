@@ -1,24 +1,36 @@
 #include "main.h"
+#include <limits.h>
 
 /**
- * print_int - Affiche un entier
- *@args: Liste d'arguments
+ * print_int - Function that prints an integer
+ * @args: List of arguments containing the integer to print
  *
- * Return: Nombre de caractères affichés
+ * Return: The number of characters printed
  */
 
 int print_int(va_list args)
 {
 	int num = va_arg(args, int);
-	int count = 0;
+	int count = 0, i = 0;
 	char buffer[12];
-	int i = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
+
+	if (num == INT_MIN)
+	{
+		char *min_str = "-2147483648";
+
+		for (i = 0; min_str[i] != '\0'; i++)
+		{
+			_putchar(min_str[i]);
+		}
+		return (i);
+	}
+
 	if (num < 0)
 	{
 		_putchar('-');

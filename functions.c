@@ -4,7 +4,7 @@
 
 /**
  * print_char - print a char
- * @print_list: searching list*
+ * @args: searching list*
  * Return: always 1
  */
 
@@ -18,7 +18,7 @@ int print_char(va_list args)
 
 /**
  * print_string - print a string
- * @print_list: searching list
+ * @args: searching list
  * Return: length of the string
  */
 
@@ -47,7 +47,7 @@ int print_string(va_list args)
 
 /**
  * print_pourcent - print pourcent
- * @print_list: searching list
+ * @args: searching list
  * Return: always 1
  */
 
